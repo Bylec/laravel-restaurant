@@ -19,7 +19,7 @@ class CreateUser extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Creates test user.';
 
     /**
      * Create a new command instance.

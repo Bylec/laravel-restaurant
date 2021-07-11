@@ -19,7 +19,7 @@ class LoginUser extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Log in user.';
 
     /**
      * Create a new command instance.
