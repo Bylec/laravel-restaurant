@@ -9,5 +9,19 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
+    /**
+     * @OA\Info(
+     *      version="1.0.0",
+     *      title="Laravel restaurant application",
+     *      description="",
+     *      @OA\Contact(
+     *          email="admin@admin.com"
+     *      ),
+     *      @OA\License(
+     *          name="Apache 2.0",
+     *          url="http://www.apache.org/licenses/LICENSE-2.0.html"
+     *      )
+     * )
+     */
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
