@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/employees/{employee}', [EmployeeController::class, 'fetch']);
 
-Route::post('/employees', [EmployeeController::class, 'create']);
-Route::patch('/employees/{employee}', [EmployeeController::class, 'update']);
-Route::delete('/employees/{employee}', [EmployeeController::class, 'delete']);
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('/employees', [EmployeeController::class, 'create']);
+    Route::patch('/employees/{employee}', [EmployeeController::class, 'update']);
+    Route::delete('/employees/{employee}', [EmployeeController::class, 'delete']);
 
-Route::post('/employees/attach/{restaurant}', [RestaurantStaffController::class, 'attachEmployees']);
-Route::post('/employees/detach/{restaurant}', [RestaurantStaffController::class, 'detachEmployees']);
+    Route::post('/employees/attach/{restaurant}', [RestaurantStaffController::class, 'attachEmployees']);
+    Route::post('/employees/detach/{restaurant}', [RestaurantStaffController::class, 'detachEmployees']);
+});
