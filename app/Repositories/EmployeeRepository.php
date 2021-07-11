@@ -3,9 +3,15 @@
 namespace App\Repositories;
 
 use App\Models\Employee;
+use Illuminate\Support\Collection;
 
 class EmployeeRepository implements EmployeeRepositoryInterface
 {
+    public function getManyByIds(array $employeeIds): Collection
+    {
+        return Employee::whereIn('id', $employeeIds)->get();
+    }
+
     public function create(array $data): Employee
     {
         return Employee::create($data);

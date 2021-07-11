@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\RestaurantStaffController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/employees/{employee}', [EmployeeController::class, 'fetch']);
+
 Route::post('/employees', [EmployeeController::class, 'create']);
 Route::patch('/employees/{employee}', [EmployeeController::class, 'update']);
 Route::delete('/employees/{employee}', [EmployeeController::class, 'delete']);
+
+Route::post('/employees/attach/{restaurant}', [RestaurantStaffController::class, 'attachEmployees']);
+Route::post('/employees/detach/{restaurant}', [RestaurantStaffController::class, 'detachEmployees']);

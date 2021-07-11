@@ -52,7 +52,7 @@ class EmployeeController extends Controller
     public function delete(Employee $employee)
     {
         return response()->json([
-            'date' => $this->employeeRepository->delete($employee)
+            'data' => $this->employeeRepository->delete($employee)
         ], Response::HTTP_OK);
     }
 }
